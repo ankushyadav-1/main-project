@@ -5,6 +5,11 @@ df = pd.read_csv("C:\\Users\\nname\\Downloads\\IP project work\\main project\\cs
 def output():
     print('-' * 145)
 
+def select_any_one_option():
+    print('''
+        Please select any one option from the menu to proceed.
+        ''')
+
 def display_menu():
 
     print('''
@@ -53,13 +58,14 @@ def Some_Basic_Details_of_All_Students():
     output()
 
 def display_student_names():
-    print('''
+    while True:
+        select_any_one_option()
+        print('''
             1. Search for all students
             2. Search for a student
             3. Exit
             ''')
-    output()
-    while True:
+        output()
         choice = int(input("Enter your choice: "))
         if choice == 1:
             print(df[['Student Name', 'Student Class & Section', 'Student Roll Number']])
@@ -83,6 +89,7 @@ def display_student_names():
             output()
 
 def display_student_roll_numbers():
+    select_any_one_option()
     print('''
             1. Search for all students
             2. Search for a student
